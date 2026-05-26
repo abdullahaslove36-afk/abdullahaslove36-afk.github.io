@@ -1,36 +1,286 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AS Official - Download Free Tools</title>
+    <title>AS Official - Ultra Premium Mod Market</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #121212; color: white; text-align: center; margin: 0; padding: 0; }
-        .header { background: linear-gradient(135deg, #075E54, #128C7E); padding: 50px 20px; border-bottom-left-radius: 40px; border-bottom-right-radius: 40px; }
-        .header h1 { margin: 0; font-size: 36px; letter-spacing: 1px; }
-        .header p { font-size: 18px; opacity: 0.9; margin-top: 10px; }
-        .main-content { padding: 40px 20px; }
-        .card { background-color: #1e1e1e; border-radius: 20px; padding: 30px; max-width: 400px; margin: 0 auto; box-shadow: 0 10px 20px rgba(0,0,0,0.3); border: 1px solid #2d2d2d; }
-        .app-icon { width: 100px; height: 100px; background-color: #075E54; border-radius: 25px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 40px; }
-        .download-btn { display: inline-block; background: linear-gradient(135deg, #ff4e50, #f9d423); color: black; font-weight: bold; padding: 15px 40px; font-size: 18px; border-radius: 50px; text-decoration: none; box-shadow: 0 5px 15px rgba(255, 78, 80, 0.4); transition: 0.3s; margin-top: 20px; }
-        .download-btn:hover { transform: scale(1.05); }
+        /* نیکسٹ لیول فور کے چمکدار بیک گراؤنڈ */
+        body { 
+            font-family: 'Segoe UI', Roboto, sans-serif; 
+            background: radial-gradient(circle at center, #1a253a 0%, #080b12 100%);
+            color: #ffffff; 
+            text-align: center; 
+            margin: 0; 
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        /* اینیمیٹڈ چمکتا ہوا نیون ہیڈر */
+        .header { 
+            background: linear-gradient(135deg, #020617, #0f172a); 
+            padding: 80px 20px; 
+            border-bottom: 4px solid #00ffcc;
+            box-shadow: 0 0 50px rgba(0, 255, 204, 0.4);
+            animation: borderGlow 2s infinite alternate;
+        }
+        @keyframes borderGlow {
+            0% { box-shadow: 0 0 30px rgba(0, 255, 204, 0.2); }
+            100% { box-shadow: 0 0 60px rgba(0, 255, 204, 0.6); }
+        }
+        .header h1 { 
+            margin: 0; 
+            font-size: 56px; 
+            text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc, 0 0 60px #00ffcc;
+            color: #00ffcc;
+            font-weight: 900;
+            letter-spacing: 2px;
+            animation: textFlicker 3s infinite;
+        }
+        @keyframes textFlicker {
+            0%, 100% { opacity: 1; text-shadow: 0 0 20px #00ffcc; }
+            50% { opacity: 0.8; text-shadow: 0 0 10px #00ffcc; }
+        }
+        .header p { font-size: 20px; color: #94a3b8; margin-top: 15px; font-weight: 300; letter-spacing: 1px; }
+
+        /* ماڈرن چمکدار سرچ بار ڈیزائن */
+        .search-container {
+            margin: -40px auto 40px;
+            max-width: 600px;
+            padding: 0 20px;
+        }
+        .search-box {
+            width: 100%;
+            padding: 18px 30px;
+            font-size: 18px;
+            border-radius: 50px;
+            border: 2px solid #1e293b;
+            background-color: #1e293b;
+            color: white;
+            outline: none;
+            box-shadow: 0 6px 30px rgba(0,0,0,0.6);
+            transition: 0.3s;
+        }
+        .search-box:focus {
+            border-color: #00ffcc;
+            box-shadow: 0 0 25px rgba(0, 255, 204, 0.5);
+            background-color: #2a3b55;
+        }
+
+        /* ایڈز کے ڈبے کا ڈیزائن */
+        .ad-slot {
+            margin: 20px auto;
+            padding: 10px;
+            max-width: 1000px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* ایپس کی لسٹ (گرڈ سسٹم) */
+        .main-content { 
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 30px; 
+        }
+
+        /* گلوئنگ، اینیمیٹڈ کارڈ ڈیزائن */
+        .card { 
+            background-color: #111827; 
+            border-radius: 25px; 
+            padding: 30px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5); 
+            border: 1px solid #1f2937; 
+            transition: transform 0.4s, box-shadow 0.4s, border-color 0.4s;
+            overflow: hidden;
+            position: relative;
+        }
+        .card:hover { 
+            transform: translateY(-15px) scale(1.03);
+            border-color: #00ffcc;
+            box-shadow: 0 15px 50px rgba(0, 255, 204, 0.3);
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 180deg at 50% 50%, #00ffcc 0deg, transparent 360deg);
+            animation: rotate 4s linear infinite;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .app-icon { 
+            width: 90px; 
+            height: 90px; 
+            background: linear-gradient(135deg, #1f2937, #0b0f19); 
+            border-radius: 25px; 
+            margin: 0 auto 20px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 40px; 
+            border: 2px solid #374151;
+            transition: 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+        .card:hover .app-icon {
+            border-color: #00ffcc;
+            text-shadow: 0 0 15px #00ffcc;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+            transform: rotate(10deg);
+        }
+
+        .card h2 { margin: 10px 0; font-size: 24px; color: #f8fafc; position: relative; z-index: 1; font-weight: 700; text-shadow: 0 0 5px rgba(255,255,255,0.1); }
+        .card p { color: #94a3b8; font-size: 16px; line-height: 1.6; min-height: 55px; text-align: center; position: relative; z-index: 1; margin-bottom: 20px; font-weight: 300; }
+
+        /* ڈاؤن لوڈ بٹن پریمیم اینیمیشن */
+        .download-btn { 
+            display: inline-block; 
+            background: linear-gradient(135deg, #00ffcc, #0099ff); 
+            color: #020617; 
+            font-weight: 900; 
+            padding: 15px 45px; 
+            font-size: 18px; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            box-shadow: 0 6px 20px rgba(0, 255, 204, 0.4); 
+            transition: 0.3s; 
+            position: relative; 
+            z-index: 1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .download-btn:hover { 
+            box-shadow: 0 6px 35px rgba(0, 255, 204, 0.8);
+            transform: scale(1.08);
+            background: linear-gradient(135deg, #0099ff, #00ffcc);
+        }
     </style>
 </head>
 <body>
 
     <div class="header">
         <h1>AS OFFICIAL</h1>
-        <p>آپ کی پسندیدہ پریمیم ایپس اور ٹولز بالکل فری</p>
+        <p>Premium Modded Apps & VIP Software Market</p>
     </div>
 
-    <div class="main-content">
-        <div class="card">
-            <div class="app-icon">🤖</div>
-            <h2>AS WhatsApp Bot</h2>
-            <p>اٹو سٹیٹس سین، لائک اور اٹو ریپلائی والا زبردست ٹول اب ڈاؤن لوڈ کریں</p>
-            <a href="#" class="download-btn">DOWNLOAD NOW</a>
-        </div>
+    <div class="search-container">
+        <input type="text" id="searchBar" class="search-box" placeholder="🔍 Search any premium app or tool...">
     </div>
+
+    <div class="ad-slot">
+        <script async="async" data-cfasync="false" src="https://pl29555432.effectivecpmnetwork.com/62abfbb6700c3d0afb13442de515fe61/invoke.js"></script>
+        <div id="container-62abfbb6700c3d0afb13442de515fe61"></div>
+    </div>
+
+    <div class="main-content" id="toolsList">
+        
+        <div class="card" data-name="capcut pro premium video editor v13 template unlocked no watermark">
+            <div class="app-icon">🎬</div>
+            <h2>CapCut Pro</h2>
+            <p>Latest version, all effects, templates, and features fully unlocked.</p>
+            <a href="https://www.mediafire.com/file/capcut_pro_latest.apk" target="_blank" class="download-btn">Download Pro</a>
+        </div>
+
+        <div class="card" data-name="kinemaster pro premium no watermark video editor font all assets">
+            <div class="app-icon">✂️</div>
+            <h2>KineMaster Pro</h2>
+            <p>Professional video editing with no watermark and a fully unlocked asset store.</p>
+            <a href="https://www.mediafire.com/file/kinemaster_pro.apk" target="_blank" class="download-btn">Download Pro</a>
+        </div>
+
+        <div class="card" data-name="sketchware pro repair editor maker app builder application mod">
+            <div class="app-icon">🛠️</div>
+            <h2>Sketchware Pro</h2>
+            <p>The official application for building professional Android apps on your mobile device.</p>
+            <a href="https://github.com/Sketchware-Pro/Sketchware-Pro/releases" target="_blank" class="download-btn">Download Mod</a>
+        </div>
+
+        <div class="card" data-name="picsart pro premium photo editor gold font unlock all tools">
+            <div class="app-icon">🎨</div>
+            <h2>PicsArt Gold</h2>
+            <p>All gold tools, fonts, and VIP effects unlocked for incredible photo editing.</p>
+            <a href="https://www.mediafire.com/file/picsart_gold_premium.apk" target="_blank" class="download-btn">Download Gold</a>
+        </div>
+
+        <div class="card" data-name="lightroom pro premium adobe photo color grading preset raw">
+            <div class="app-icon">📸</div>
+            <h2>Lightroom Pro</h2>
+            <p>All Adobe Lightroom premium presets and color grading tools fully unlocked.</p>
+            <a href="https://www.mediafire.com/file/lightroom_premium.apk" target="_blank" class="download-btn">Download VIP</a>
+        </div>
+
+        <div class="card" data-name="inshot pro premium video editor converter transition sticker">
+            <div class="app-icon">🎥</div>
+            <h2>InShot Pro</h2>
+            <p>All premium transitions, stickers, and effects unlocked, completely watermark-free.</p>
+            <a href="https://www.mediafire.com/file/inshot_pro_premium.apk" target="_blank" class="download-btn">Download Pro</a>
+        </div>
+
+        <div class="card" data-name="gb whatsapp pro anti ban latest mod original status downloader privacy">
+            <div class="app-icon">💬</div>
+            <h2>GB WA Pro</h2>
+            <p>The latest anti-ban version with status downloader and advanced privacy features.</p>
+            <a href="https://www.mediafire.com/file/gbwhatsapp_latest.apk" target="_blank" class="download-btn">Download APK</a>
+        </div>
+
+        <div class="card" data-name="remini pro premium photo enhancer unlimited unblur">
+            <div class="app-icon">✨</div>
+            <h2>Remini Pro</h2>
+            <p>Transform blurry photos into 4K HD quality with unlimited credits and no ads.</p>
+            <a href="https://www.mediafire.com/file/remini_premium_mod.apk" target="_blank" class="download-btn">Download VIP</a>
+        </div>
+
+        <div class="card" data-name="canva pro premium graphic design logo template brand kit">
+            <div class="app-icon">📐</div>
+            <h2>Canva Pro</h2>
+            <p>All premium graphic design templates, logos, and brand kits fully unlocked.</p>
+            <a href="https://www.mediafire.com/file/canva_premium_mod.apk" target="_blank" class="download-btn">Download VIP</a>
+        </div>
+
+        <div class="card" data-name="alight motion pro premium video xml preset graphics motion blur">
+            <div class="app-icon">💎</div>
+            <h2>Alight Motion</h2>
+            <p>Stunning animation and graphics editing with premium XML presets and motion blur.</p>
+            <a href="https://www.mediafire.com/file/alight_motion_pro.apk" target="_blank" class="download-btn">Download Pro</a>
+        </div>
+
+    </div>
+
+    <div class="ad-slot">
+        <script async="async" data-cfasync="false" src="https://pl29555432.effectivecpmnetwork.com/62abfbb6700c3d0afb13442de515fe61/invoke.js"></script>
+        <div id="container-62abfbb6700c3d0afb13442de515fe61"></div>
+    </div>
+
+    <script>
+        const searchBar = document.getElementById('searchBar');
+        searchBar.addEventListener('keyup', (e) => {
+            const searchString = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+            
+            cards.forEach((card) => {
+                const name = card.getAttribute('data-name');
+                if (name.includes(searchString)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
 
 </body>
-              </html>
+    </html>
