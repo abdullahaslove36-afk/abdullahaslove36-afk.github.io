@@ -3,63 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AS Official - Premium APK Market</title>
+    <title>AS Official - GetMod Premium Apps</title>
     <style>
-        /* پروفیشنل ڈارک تھیم */
+        /* الٹرا ماڈرن پریمیم ڈارک تھیم */
         body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-            background-color: #0b0e14;
-            color: #ffffff; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: radial-gradient(circle at top, #111827, #070a0f);
+            color: #f3f4f6; 
             text-align: center; 
             margin: 0; 
             padding: 0;
         }
         
-        /* سمپل اور کلین گرین اینڈ بلیک ہیڈر */
+        /* شاندار برانڈڈ ہیڈر */
         .header { 
-            background-color: #161b22; 
-            padding: 40px 20px; 
-            border-bottom: 3px solid #2ea44f; 
+            background: rgba(22, 27, 34, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 50px 20px; 
+            border-bottom: 2px solid #10b981; /* الٹرا گرین */
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.1);
         }
         .header h1 { 
             margin: 0; 
-            font-size: 38px; 
-            color: #2ea44f;
-            font-weight: 700;
-            letter-spacing: 1px;
+            font-size: 42px; 
+            color: #10b981;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
         }
         .header p { 
             font-size: 16px; 
-            color: #8b949e; 
-            margin-top: 8px; 
-            font-weight: 400; 
+            color: #9ca3af; 
+            margin-top: 10px;
+            font-weight: 500;
         }
 
-        /* سمپل سرچ بار */
+        /* نیا ماڈرن سرچ بار بکس */
         .search-container {
-            margin: 25px auto;
-            max-width: 550px;
-            padding: 0 15px;
+            margin: 35px auto;
+            max-width: 600px;
+            padding: 0 20px;
         }
         .search-box {
             width: 100%;
-            padding: 14px 20px;
+            padding: 16px 25px;
             font-size: 16px;
-            border-radius: 8px;
-            border: 1px solid #30363d;
-            background-color: #161b22;
+            border-radius: 50px; /* فل راؤنڈ پروفیشنل سرچ */
+            border: 2px solid #374151;
+            background-color: #1f2937;
             color: white;
             outline: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
             box-sizing: border-box;
         }
         .search-box:focus {
-            border-color: #2ea44f;
+            border-color: #10b981;
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
         }
 
-        /* ایڈز SLOT */
+        /* ایڈز سلاٹ */
         .ad-slot {
-            margin: 15px auto;
+            margin: 20px auto;
             padding: 5px;
             max-width: 1000px;
             display: flex;
@@ -67,60 +73,79 @@
             align-items: center;
         }
 
-        /* ایپس کی لسٹ */
+        /* ایپس لسٹ گرڈ */
         .main-content { 
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px; 
+            padding: 30px 20px; 
         }
 
-        /* کلاسک اور لائٹ ویٹ کارڈ ڈیزائن */
+        /* خوبصورت کارڈ ڈیزائن */
         .card { 
-            background-color: #161b22; 
-            border-radius: 12px; 
-            padding: 25px; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4); 
-            border: 1px solid #30363d; 
-            transition: transform 0.2s, border-color 0.2s;
+            background: #111827; 
+            border-radius: 16px; 
+            padding: 30px 20px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
+            border: 1px solid #1f2937; 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: #10b981;
+            opacity: 0;
+            transition: opacity 0.3s;
         }
         .card:hover { 
-            transform: translateY(-5px);
-            border-color: #2ea44f;
+            transform: translateY(-8px);
+            border-color: #10b981;
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.15);
+        }
+        .card:hover::before {
+            opacity: 1;
         }
 
+        /* گول اور شاندار ایپ آئیکنز */
         .app-icon { 
-            width: 70px; 
-            height: 70px; 
-            background-color: #0b0e14; 
-            border-radius: 14px; 
-            margin: 0 auto 15px; 
+            width: 80px; 
+            height: 80px; 
+            background-color: #1f2937; 
+            border-radius: 20px; 
+            margin: 0 auto 20px; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            font-size: 32px; 
-            border: 1px solid #30363d;
+            font-size: 36px; 
+            border: 1px solid #374151;
+            box-shadow: inset 0 4px 10px rgba(0,0,0,0.3);
         }
 
-        .card h2 { margin: 10px 0; font-size: 20px; color: #ffffff; font-weight: 600; }
-        .card p { color: #8b949e; font-size: 14px; line-height: 1.5; min-height: 45px; margin-bottom: 20px; }
+        .card h2 { margin: 10px 0; font-size: 22px; color: #ffffff; font-weight: 700; }
+        .card p { color: #9ca3af; font-size: 14px; line-height: 1.6; min-height: 45px; margin-bottom: 25px; }
 
-        /* گرین ڈاؤن لوڈ بٹن */
+        /* پریمیم گرین ڈاؤن لوڈ بٹن */
         .download-btn { 
-            display: inline-block; 
-            background-color: #2ea44f; 
+            display: block; 
+            background: linear-gradient(135deg, #10b981, #059669); 
             color: #ffffff; 
-            font-weight: 600; 
-            padding: 12px 35px; 
+            font-weight: 700; 
+            padding: 14px 0; 
             font-size: 15px; 
-            border-radius: 6px; 
+            border-radius: 10px; 
             text-decoration: none; 
-            transition: background-color 0.2s;
+            letter-spacing: 0.5px;
+            transition: all 0.2s ease;
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
         }
         .download-btn:hover { 
-            background-color: #2c974b;
+            background: linear-gradient(135deg, #059669, #047857);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.5);
         }
     </style>
 </head>
@@ -128,11 +153,11 @@
 
     <div class="header">
         <h1>AS OFFICIAL</h1>
-        <p>Premium Android Apps & Latest Tools Market</p>
+        <p>GetMod Premium Unlocked Android Apps Market</p>
     </div>
 
     <div class="search-container">
-        <input type="text" id="searchBar" class="search-box" placeholder="Search apps...">
+        <input type="text" id="searchBar" class="search-box" placeholder="Search from unlimited premium apps...">
     </div>
 
     <div class="ad-slot">
@@ -142,81 +167,185 @@
 
     <div class="main-content" id="toolsList">
         
-        <div class="card" data-name="capcut pro premium video editor v13 template unlocked no watermark">
+        <div class="card" data-name="capcut pro premium video editor v13 template unlocked no watermark getmod">
             <div class="app-icon">🎬</div>
             <h2>CapCut Pro</h2>
-            <p>Latest GmpModder build, all premium templates and templates unlocked.</p>
-            <a href="https://gamedva.com/capcut-1" target="_blank" class="download-btn">Download</a>
+            <p>GetMod exclusive build, all pro premium templates fully unlocked.</p>
+            <a href="https://getmods.net/capcut-mod-apk/" target="_blank" class="download-btn">Download from GetMod</a>
         </div>
 
-        <div class="card" data-name="kinemaster pro premium no watermark video editor font all assets">
+        <div class="card" data-name="kinemaster pro premium no watermark video editor font all assets getmod">
             <div class="app-icon">✂️</div>
             <h2>KineMaster Pro</h2>
-            <p>Full premium unlocked version, assets and fonts free to use.</p>
-            <a href="https://gamedva.com/kinemaster" target="_blank" class="download-btn">Download</a>
+            <p>Full premium layer editing, watermark removed, elite store active.</p>
+            <a href="https://getmods.net/kinemaster-mod-apk/" target="_blank" class="download-btn">Download from GetMod</a>
         </div>
 
-        <div class="card" data-name="sketchware pro repair editor maker app builder application mod">
+        <div class="card" data-name="sketchware pro repair editor maker app builder application mod github">
             <div class="app-icon">🛠️</div>
             <h2>Sketchware Pro</h2>
-            <p>The official application for building professional Android apps on mobile.</p>
-            <a href="https://github.com/Sketchware-Pro/Sketchware-Pro/releases" target="_blank" class="download-btn">Download</a>
+            <p>The developer standalone tool to build Android applications on phone.</p>
+            <a href="https://github.com/Sketchware-Pro/Sketchware-Pro/releases" target="_blank" class="download-btn">Download Official</a>
         </div>
 
-        <div class="card" data-name="picsart pro premium photo editor gold font unlock all tools">
+        <div class="card" data-name="picsart pro premium photo editor gold font unlock all tools getmod">
             <div class="app-icon">🎨</div>
             <h2>PicsArt Gold</h2>
-            <p>All Gold tools, premium stickers, and VIP filters unlocked.</p>
-            <a href="https://gamedva.com/picsart-photo-studio" target="_blank" class="download-btn">Download</a>
+            <p>All photo tools, premium text fonts, and VIP filters unlocked.</p>
+            <a href="https://getmods.net/picsart-mod-apk/" target="_blank" class="download-btn">Download from GetMod</a>
         </div>
 
-        <div class="card" data-name="lightroom pro premium adobe photo color grading preset raw">
+        <div class="card" data-name="lightroom pro premium adobe photo color grading preset raw getmod">
             <div class="app-icon">📸</div>
             <h2>Lightroom Pro</h2>
-            <p>Premium unlocked build with elite presets and raw photo color tools.</p>
-            <a href="https://gamedva.com/adobe-lightroom" target="_blank" class="download-btn">Download</a>
+            <p>Premium mobile color grading setup with all premium presets unlocked.</p>
+            <a href="https://getmods.net/adobe-lightroom-mod-apk/" target="_blank" class="download-btn">Download from GetMod</a>
         </div>
 
-        <div class="card" data-name="inshot pro premium video editor converter transition sticker">
+        <div class="card" data-name="inshot pro premium video editor converter transition sticker getmod">
             <div class="app-icon">🎥</div>
             <h2>InShot Pro</h2>
-            <p>Watermark removed, all transition filters and sound packs unlocked.</p>
-            <a href="https://gamedva.com/inshot" target="_blank" class="download-btn">Download</a>
+            <p>No watermark, elite transitions unlocked with full video speed controls.</p>
+            <a href="https://getmods.net/inshot-pro-mod-apk/" target="_blank" class="download-btn">Download from GetMod</a>
         </div>
 
-        <div class="card" data-name="gb whatsapp pro anti ban latest mod original status downloader privacy">
+        <div class="card" data-name="gb whatsapp pro anti ban latest mod original status downloader privacy waves">
             <div class="app-icon">💬</div>
             <h2>GB WA Pro</h2>
-            <p>Latest anti-ban release with pro custom themes and status downloader.</p>
-            <a href="https://androidwaves.com/download-gbwhatsapp-pro/" target="_blank" class="download-btn">Download</a>
+            <p>Latest absolute anti-ban version with direct status media downloader.</p>
+            <a href="https://androidwaves.com/download-gbwhatsapp-pro/" target="_blank" class="download-btn">Download Official</a>
         </div>
 
-        <div class="card" data-name="remini pro premium photo enhancer unlimited unblur">
+        <div class="card" data-name="remini pro premium photo enhancer unlimited unblur ai getmod">
             <div class="app-icon">✨</div>
-            <h2>Remini Pro</h2>
-            <p>Latest GmpModder enhancement engine with zero ads and elite processing.</p>
-            <a href="https://gamedva.com/remini" target="_blank" class="download-btn">Download</a>
+            <h2>Remini AI Pro</h2>
+            <p>Convert any old low quality photo to ultra 4K HD clear face.</p>
+            <a href="https://getmods.net/remini-mod-apk/" target="_blank" class="download-btn">Download from GetMod</a>
         </div>
 
-        <div class="card" data-name="canva pro premium graphic design logo template brand kit">
+        <div class="card" data-name="canva pro premium graphic design logo template brand kit getmod">
             <div class="app-icon">📐</div>
             <h2>Canva Pro</h2>
-            <p>Unlock all graphic design brand resources, templates, and layouts.</p>
-            <a href="https://gamedva.com/canva" target="_blank" class="download-btn">Download</a>
+            <p>Premium graphic design access, layouts, and brand kits unlocked.</p>
+            <a href="https://getmods.net/canva-mod-apk/" target="_blank" class="download-btn">Download from GetMod</a>
         </div>
 
-        <div class="card" data-name="alight motion pro premium video xml preset graphics motion blur">
+        <div class="card" data-name="alight motion pro premium video xml preset graphics motion blur getmod">
             <div class="app-icon">💎</div>
             <h2>Alight Motion</h2>
-            <p>Pro motion graphics editor with XML preset support and smooth rendering.</p>
-            <a href="https://gamedva.com/alight-motion" target="_blank" class="download-btn">Download</a>
+            <p>Pro motion graphics design setup with full XML import support.</p>
+            <a href="https://getmods.net/alight-motion-mod-apk/" target="_blank" class="download-btn">Download from GetMod</a>
+        </div>
+
+        <div class="card" data-name="spotify premium mod apk music stream unlimited skip no ads getmod">
+            <div class="app-icon">🎵</div>
+            <h2>Spotify Premium</h2>
+            <p>Listen to offline or online music with no ads and unlimited skips.</p>
+            <a href="https://getmods.net/spotify-premium-mod-apk/" target="_blank" class="download-btn">Download from GetMod</a>
+        </div>
+
+        <div class="card" data-name="subway surfers mega mod apk unlimited coins keys characters getmod">
+            <div class="app-icon">🏃</div>
+            <h2>Subway Surfers</h2>
+            <p>GetMod special edition with infinite coins, board keys, and skins.</p>
+            <a href="https://getmods.net/subway-surfers-mod-apk/" target="_blank" class="download-btn">Download from GetMod</a>
+        </div>
+
+        <div class="card" data-name="gta san andreas grand theft auto mod menu cleo cheats getmod">
+            <div class="app-icon">🚗</div>
+            <h2>GTA San Andreas</h2>
+            <p>Full Android optimized map version with active Cleo cheat scripts.</p>
+            <a href="https://getmods.net/grand-theft-auto-san-andreas-mod-apk-1/" target="_blank" class="download-btn">Download from GetMod</a>
+        </div>
+
+        <div class="card" data-name="minecraft pocket edition pe mod apk free skins unlocked getmod">
+            <div class="app-icon">🧱</div>
+            <h2>Minecraft PE</h2>
+            <p>Latest version with premium unlocked shop skins and creative mode features.</p>
+            <a href="https://getmods.net/minecraft-mod-apk/" target="_blank" class="download-btn">Download from GetMod</a>
+        </div>
+
+        <div class="card" data-name="shadow fight 2 mod apk special edition unlimited max level getmod">
+            <div class="app-icon">🥷</div>
+            <h2>Shadow Fight 2</h2>
+            <p>Infinite coins and magical dark gems mod to max out gear instantly.</p>
+            <a href="https://getmods.net/shadow-fight-2-mod-apk/" target="_blank" class="download-btn">Download from GetMod</a>
+        </div>
+
+        <div class="card" data-name="truecaller premium gold mod apk caller id spam block getmod">
+            <div class="app-icon">📞</div>
+            <h2>Truecaller Gold</h2>
+            <p>Gold profile identification and deep spam detector fully active.</p>
+            <a href="https://getmods.net/truecaller-premium-apk/" target="_blank" class="download-btn">Download from GetMod</a>
+        </div>
+
+        <div class="card" data-name="mx player pro apk premium full audio codec unlocked getmod">
+            <div class="app-icon">📱</div>
+            <h2>MX Player Pro</h2>
+            <p>No advertisements, premium video layout with AC3 custom sound codecs.</p>
+            <a href="https://getmods.net/mx-player-pro-apk/" target="_blank" class="download-btn">Download from GetMod</a>
+        </div>
+
+        <div class="card" data-name="powerdirector pro premium video editor 4k unlocked getmod">
+            <div class="app-icon">💿</div>
+            <h2>PowerDirector</h2>
+            <p>Cinematic editing tools with high scale 4K video exports unlocked.</p>
+            <a href="https://getmods.net/powerdirector-mod-apk/" target="_blank" class="download-btn">Download from GetMod</a>
+        </div>
+
+        <div class="card" data-name="hill climb racing mod apk unlimited money fuel vehicles getmod">
+            <div class="app-icon">🚗</div>
+            <h2>Hill Climb</h2>
+            <p>Infinite money and fuel mod to purchase and upgrade all tracks.</p>
+            <a href="https://getmods.net/hill-climb-racing-mod-apk/" target="_blank" class="download-btn">Download from GetMod</a>
+        </div>
+
+        <div class="card" data-name="snapseed google photo editor filter raw presets getmod">
+            <div class="app-icon">🌿</div>
+            <h2>Snapseed Pro</h2>
+            <p>Advanced photo filter and masking tool developed by Google engine.</p>
+            <a href="https://getmods.net/snapseed-mod-apk/" target="_blank" class="download-btn">Download from GetMod</a>
+        </div>
+
+        <div class="card" data-name="photodirector pro premium photo editor ai object removal getmod">
+            <div class="app-icon">🔮</div>
+            <h2>PhotoDirector</h2>
+            <p>AI background correction, clear lens effects, and blending unlocked.</p>
+            <a href="https://getmods.net/photodirector-mod-apk/" target="_blank" class="download-btn">Download from GetMod</a>
+        </div>
+
+        <div class="card" data-name="kinemaster diamond mod blue theme premium features getmod">
+            <div class="app-icon">💎</div>
+            <h2>KM Diamond</h2>
+            <p>Special diamond blue edition with premium templates preloaded.</p>
+            <a href="https://getmods.net/kinemaster-diamond-apk/" target="_blank" class="download-btn">Download from GetMod</a>
+        </div>
+
+        <div class="card" data-name="vivavideo pro VIP premium editor templates unlocked getmod">
+            <div class="app-icon">🎬</div>
+            <h2>VivaVideo VIP</h2>
+            <p>VIP clip tools, premium stickers, and music layer tracks active.</p>
+            <a href="https://getmods.net/vivavideo-mod-apk/" target="_blank" class="download-btn">Download from GetMod</a>
+        </div>
+
+        <div class="card" data-name="temple run 2 mod apk unlimited money diamonds unlocked getmod">
+            <div class="app-icon">🐒</div>
+            <h2>Temple Run 2</h2>
+            <p>Infinite energy gems and coins to revive your runner anytime.</p>
+            <a href="https://getmods.net/temple-run-2-mod-apk/" target="_blank" class="download-btn">Download from GetMod</a>
+        </div>
+
+        <div class="card" data-name="vector premium mod apk full version unlocked coins getmod">
+            <div class="app-icon">🏃‍♂️</div>
+            <h2>Vector Premium</h2>
+            <p>Classic parkour full platform unlocked with infinite store credits.</p>
+            <a href="https://getmods.net/vector-mod-apk/" target="_blank" class="download-btn">Download from GetMod</a>
         </div>
 
     </div>
 
     <div class="ad-slot">
-        <script async="async" data-cfasync="false" src="https://pl29555432.effectivecpmnetwork.com/62abfbb6700c3d0afb13442de515fe61/invoke.js"></script>
-        <div id="container-62abfbb6700c3d0afb13442de515fe61"></div>
+        <script type='text/javascript' src='//pl29555432.effectivecpmnetwork.com/9a/3c/e4/9a3ce43218c3d0afb13442de515fe61.js'></script>
     </div>
 
     <script>
@@ -228,6 +357,7 @@
             cards.forEach((card) => {
                 const name = card.getAttribute('data-name');
                 if (name.includes(searchString)) {
+                    card.style.with = 'block';
                     card.style.display = 'block';
                 } else {
                     card.style.display = 'none';
@@ -237,4 +367,4 @@
     </script>
 
 </body>
-    </html>
+                </html>
