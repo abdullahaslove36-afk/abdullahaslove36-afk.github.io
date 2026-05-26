@@ -3,49 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AS OFFICIAL | ULTIMATE TOOL HUB</title>
+    <title>AS OFFICIAL | AI & TOOLS</title>
     <style>
-        :root { --red: #ff0000; --bg: #050505; }
-        body { background: var(--bg); color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
+        body { background: #050505; color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
         
-        /* ہیڈر اور واٹس ایپ بٹن */
-        .header { padding: 50px 20px; text-align: center; border-bottom: 2px solid var(--red); }
-        .header h1 { font-size: 50px; color: var(--red); margin: 0; letter-spacing: 5px; }
-        .whatsapp-btn { 
-            background: #25d366; color: #fff; padding: 12px 25px; border-radius: 50px;
-            text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px;
-            box-shadow: 0 0 15px #25d366;
-        }
-
+        /* ہیڈر */
+        .header { padding: 50px 20px; text-align: center; border-bottom: 2px solid #ff0000; }
+        .header h1 { font-size: 45px; color: #ff0000; letter-spacing: 3px; margin-bottom: 10px; }
+        .header p { color: #888; }
+        
         /* ٹول گرڈ */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 40px; }
-        .tool-card { 
-            background: #111; border: 1px solid #222; padding: 25px; border-radius: 25px;
-            text-align: center; transition: 0.4s; position: relative; overflow: hidden;
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 30px; max-width: 1200px; margin: auto; }
+        
+        /* گول کونے والے کارڈز */
+        .tool { 
+            background: #111; border: 1px solid #333; padding: 30px; 
+            border-radius: 40px; text-align: center; transition: 0.4s;
         }
-        .tool-card:hover { border-color: var(--red); transform: translateY(-10px); box-shadow: 0 0 20px rgba(255,0,0,0.2); }
-        .tool-card h3 { color: var(--red); }
-        .btn { background: var(--red); color: #fff; padding: 10px 20px; border-radius: 20px; text-decoration: none; display: block; margin-top: 15px; }
+        .tool:hover { transform: translateY(-10px); border-color: #ff0000; box-shadow: 0 0 20px rgba(255,0,0,0.3); }
+        .tool h3 { color: #ff0000; margin-top: 0; }
+        
+        /* بٹن */
+        .btn { background: #ff0000; color: #fff; padding: 12px 30px; border-radius: 50px; text-decoration: none; display: inline-block; margin-top: 15px; font-weight: bold; }
+        
+        /* واٹس ایپ فلوٹنگ بٹن */
+        .wa-float { 
+            position: fixed; bottom: 20px; right: 20px; background: #25d366; 
+            padding: 15px 25px; border-radius: 50px; color: white; text-decoration: none; 
+            font-weight: bold; box-shadow: 0 0 15px #25d366; z-index: 1000;
+        }
     </style>
 </head>
 <body>
 
     <div class="header">
         <h1>AS OFFICIAL</h1>
-        <p>The Future of Online Tools</p>
-        <a href="https://wa.me/923480724633" class="whatsapp-btn">💬 Chat with AS Official</a>
+        <p>Your Ultimate AI & Tool Hub</p>
     </div>
 
     <div class="grid">
-        <div class="tool-card"><h3>Video Downloader</h3><p>Fast social media video saving.</p><a href="#" class="btn">Launch</a></div>
-        <div class="tool-card"><h3>BG Remover</h3><p>Remove image background instantly.</p><a href="#" class="btn">Launch</a></div>
-        <div class="tool-card"><h3>Image Enhancer</h3><p>Turn blurry photos to 4K HD.</p><a href="#" class="btn">Launch</a></div>
-        <div class="tool-card"><h3>URL Shortener</h3><p>Make your links short & clean.</p><a href="#" class="btn">Launch</a></div>
-        <div class="tool-card"><h3>WhatsApp Link Gen</h3><p>Create direct chat links.</p><a href="#" class="btn">Launch</a></div>
-        <div class="tool-card"><h3>IP Lookup</h3><p>Get accurate location details.</p><a href="#" class="btn">Launch</a></div>
-        <div class="tool-card"><h3>QR Generator</h3><p>Create QR codes for free.</p><a href="#" class="btn">Launch</a></div>
-        <div class="tool-card"><h3>Text to PDF</h3><p>Convert notes into documents.</p><a href="#" class="btn">Launch</a></div>
+        <div class="tool"><h3>AI Chatbot</h3><p>Talk with AS AI Bot instantly.</p><a href="#" class="btn">Chat Now</a></div>
+        <div class="tool"><h3>Video Downloader</h3><p>Save HD videos from social media.</p><a href="#" class="btn">Launch</a></div>
+        <div class="tool"><h3>BG Remover</h3><p>Remove photo background in a click.</p><a href="#" class="btn">Launch</a></div>
+        <div class="tool"><h3>URL Shortener</h3><p>Shorten long links professionally.</p><a href="#" class="btn">Launch</a></div>
     </div>
+
+    <a href="https://wa.me/923480724633" class="wa-float">💬 Contact Me</a>
 
     <script type='text/javascript' src='//pl29555432.effectivecpmnetwork.com/9a/3c/e4/9a3ce43218c3d0afb13442de515fe61.js'></script>
 </body>
